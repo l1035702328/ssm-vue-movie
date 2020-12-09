@@ -37,7 +37,7 @@ public class UserController {
     }
 
     @ResponseBody
-    @RequestMapping(value = "/login_first2")
+    @RequestMapping(value = "/admin/login")
     public String loginInfo(@RequestBody String myForm){
         System.out.println(myForm);
         FastJsonUtil putJson = new FastJsonUtil();

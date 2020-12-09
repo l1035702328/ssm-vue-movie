@@ -9,6 +9,7 @@
         http://www.springframework.org/schema/context/spring-context-4.0.xsd
         http://www.springframework.org/schema/mvc
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <mvc:view-controller path="/" view-name="redirect:/"/>
     <!--1.注解驱动-->
     <mvc:annotation-driven/>
     <!--2.静态资源过滤-->
@@ -20,4 +21,22 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--拦截器配置-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <!--/**包括这个请求下面的所有的请求.-->
+            <!--/只过滤当前一个请求-->
+            <mvc:mapping path="/**"/>
+            <bean class="com.lzz.config.LoginInterceptor"></bean>
+        </mvc:interceptor>
+<!--        <mvc:interceptor>-->
+<!--            &lt;!&ndash;/**包括这个请求下面的所有的请求.&ndash;&gt;-->
+<!--            &lt;!&ndash;/只过滤当前一个请求&ndash;&gt;-->
+<!--            <mvc:mapping path="/uc/**"/>-->
+<!--            <mvc:exclude-mapping path="/user/login"/>-->
+<!--            <mvc:exclude-mapping path="/user/goLogin"/>-->
+<!--            <bean class="com.lzz.config.LoginInterceptor"></bean>-->
+<!--        </mvc:interceptor>-->
+    </mvc:interceptors>
 </beans>
