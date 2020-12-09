@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from "../views/Login";
-import Register from "../views/Register";
-import Main from "../views/Main";
-import HeadIndex from "../views/HeadIndex";
+import main from "../components/views/main";
+import login from "../components/login/login";
 
 Vue.use(Router)
 
@@ -12,37 +10,19 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Main,
-    },
-    {
-      path:'/login',
-      name:'login',
-      component:Login,
-    },
-    {
-      path:'/register',
-      name:'register',
-      component:Register,
-    },
-    {
-      path: '/main/:username',
       name: 'main',
-      component: Main,
-      props: true,
+      component: main,
     },
     {
-      path: '/main',
-      name: 'main',
-      component: Main,
+      path: '/login',
+      name: 'login',
+      component:login
     },
     {
-      path: '/headIndex',
-      name: 'head',
-      component: HeadIndex,
+      path:'/main/:username',
+      name:'mainIndex',
+      component:main,
       props:true,
-    },
-    {
-      path:'/admin/user',
-    },
-
-]})
+    }
+  ]
+})

@@ -5,18 +5,17 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import axios from 'axios'
-import VueAxios from 'vue-axios'
-import ViewUI from 'view-design';
-import 'view-design/dist/styles/iview.css'
-Vue.use(ViewUI)
-Vue.use(VueAxios, axios);
+import $ from 'jquery'
+import 'bootstrap3/dist/css/bootstrap.css'
+import 'bootstrap3/dist/js/bootstrap'
+
 Vue.use(ElementUI);
-Vue.config.productionTip = false;
+
+Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  render: h => h(App),
+  render: h => h(App)
 });
