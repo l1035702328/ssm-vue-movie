@@ -30,7 +30,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">注册</a></li>
-          <li v-if="username==null"><router-link to="/login">登录{{username1}}</router-link></li>
+          <li v-if="username==null"><router-link to="/login">登录</router-link></li>
           <li class="dropdown" v-else>
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{username}}<span class="caret"></span></a>
             <ul class="dropdown-menu">

@@ -47,7 +47,6 @@
               //this.$router.push("main/"+this.form.username);
                 const res=login(this.form);
                 res.then(function (response) {
-                  console.log(response);
                   if(response.data.result=="success"){
                     console.log(response.data.user);
                     that.$router.push("/main/"+response.data.user);

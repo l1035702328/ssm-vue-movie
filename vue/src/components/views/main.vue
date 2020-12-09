@@ -2,7 +2,7 @@
   <div style="background-color: #f8f8f8">
   <head-index :username='username'></head-index>
     <el-main>
-  <content-index ></content-index>
+  <content-index></content-index>
  </el-main>
     <el-footer>
     <foot-index></foot-index>
@@ -19,8 +19,10 @@
         data(){
           return{
 
+
           }
         },
+
         name: "mainIndex",
         components:{
           headIndex,

@@ -12,7 +12,7 @@
             <span><b>最热</b></span>
           </div>
         <ul class="media-list">
-          <li class="media"  v-for="i in movie">
+          <li class="media"  v-for="i in movies">
             <div class="media-left">
               <a href="#">
                 <img class="media-object" src="~@/assets/movieImag/2.jpg" style="width: 220px;height: 150px">
@@ -55,10 +55,12 @@
           <div slot="header" class="clearfix">
             <span><b>电影类型</b></span>
           </div>
-          <div class="text item" v-for="i in 5">
+          <div class="text item" v-for="i in 1">
             <el-tag>剧情</el-tag>
             <el-tag type="success">喜剧</el-tag>
             <el-tag type="info">冒险</el-tag>
+            <el-tag type="warning">犯罪</el-tag>
+            <el-tag type="warning">爱情</el-tag>
             <el-tag type="warning">犯罪</el-tag>
           </div>
         </el-card>
@@ -69,10 +71,12 @@
 </template>
 
 <script>
+    import {getMovies} from "../../api/getData";
+
     export default {
         data(){
           return{
-            movie:
+            movies:
               [{
                 movieType:'欧美电影',
                 movieName:'复仇者联盟',
@@ -95,7 +99,18 @@
                 },
               ],
           }
-        }
+        },
+      created(){
+        const res=getMovies();
+        res.then(function (response) {
+          this.data().movies=response.data;
+
+        })
+          .catch(function (error) {
+            console.log(error.data);
+          });
+
+      },
     }
 </script>
 
