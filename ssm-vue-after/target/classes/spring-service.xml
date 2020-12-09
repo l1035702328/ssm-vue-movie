@@ -19,6 +19,9 @@
     <bean id="UserServiceImpl" class="com.lzz.service.UserServiceImpl">
         <property name="userMapper" ref="userMapper"></property>
     </bean>
+    <bean id="MovieServiceImpl" class="com.lzz.service.MovieServiceImpl">
+        <property name="movieMapper" ref="movieMapper"></property>
+    </bean>
     <!--3声明式事务配置-->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--注入数据源-->
