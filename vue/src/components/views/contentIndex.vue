@@ -89,25 +89,24 @@
               },
                 {
                   movieType:'大陆电影',
-                  movieName:'叶问',
+                  movieName:'chisu',
                   movieSharpness:'1080P',
-                  movieContent:'是广东省的色温恶个任何人',
+                  movieContent:'是广东省的色温恶个任何d',
                   movieReleaseDate:'2013-08-15',
                   viewCount:'0',
                   imgUrl:'',
-                  DouBanScore:'7.0',
-                },
-              ],
+                  DouBanScore:'8.0',
+                },],
           }
         },
       created(){
+        let that=this;
         const res=getMovies();
         res.then(function (response) {
-          this.data().movies=response.data;
-
+          that.movies=response.data;
         })
           .catch(function (error) {
-            console.log(error.data);
+            console.log('error:'+error.data);
           });
 
       },
